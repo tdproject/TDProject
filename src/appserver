@@ -1,0 +1,49 @@
+#!/usr/bin/php
+<?php
+
+// set the session timeout to unlimited
+ini_set('session.gc_maxlifetime', 0);
+ini_set('zend.enable_gc', '0');
+
+define('DS', DIRECTORY_SEPARATOR);
+define('PS', PATH_SEPARATOR);
+define('BP', getcwd());
+
+$paths[] = BP . DS . 'var' . DS . 'cache';
+$paths[] = BP . DS . 'app' . DS . 'code' . DS . 'local';
+$paths[] = BP . DS . 'app' . DS . 'code' . DS . 'community';
+$paths[] = BP . DS . 'app' . DS . 'code' . DS . 'core';
+$paths[] = BP . DS . 'app' . DS . 'code' . DS . 'lib';
+
+// set the new include path
+set_include_path(implode(PS, $paths) . PS . get_include_path());
+
+require_once 'Net/Server.php';
+require_once 'TechDivision/Properties/Properties.php';
+require_once 'TechDivision/ApplicationServer/Driver/Fork/InitialContext.php';
+require_once 'TechDivision/ApplicationServer/Handler.php';
+
+$configuration = new TechDivision_Properties_Properties();
+$configuration->load('TechDivision/ApplicationServer/META-INF/server.properties');
+
+// create a server that forks new processes
+$host = $configuration->getProperty('host');
+$port = $configuration->getProperty('port');
+
+$server = new TechDivision_ApplicationServer_Driver_Fork_InitialContext($host, $port);
+$server->setDebugMode(false);
+$server->useAOP(true);
+
+// initialize the server
+$handler = new TechDivision_ApplicationServer_Handler();
+    
+// hand over the object that handles server events
+$server->setCallbackObject($handler);
+
+// load the deployment descriptor with the container configuration
+$containerConfiguration = TechDivision_Model_Configuration_XML::getConfiguration(
+	'TDProject/META-INF/deployment-descriptor.xml'
+);
+
+// start the server
+$server->start($containerConfiguration);

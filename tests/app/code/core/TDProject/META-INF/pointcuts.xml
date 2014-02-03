@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pointcuts>
+    <pointcut>
+        <includeFile>TDProject/Pointcuts/Logging.php</includeFile>
+        <className>TDProject_Pointcuts_Logging</className>
+        <methodToIntercept>.* .*->some.*(.*)</methodToIntercept>
+        <advice>before</advice>
+        <interceptWithMethod>log</interceptWithMethod>
+    </pointcut>
+</pointcuts>

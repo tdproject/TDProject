@@ -1,0 +1,21 @@
+<role version="1.0">
+	<releasetypes>php</releasetypes>
+	<installable>0</installable>
+	<!--
+	<locationconfig>tdproject_log_properties</locationconfig>
+	<unusualbaseinstall />
+	-->
+	<phpfile/>
+	<honorsbaseinstall/>
+	<executable />
+	<phpextension />
+	<config_vars>
+		<tdproject_log_properties>
+			<type>string</type>
+			<default>TDProject/WEB-INF/log4php.properties</default>
+			<doc>Path to the log properties</doc>
+			<prompt>Path to the log properties</prompt>
+			<group>Advanced</group>
+		</tdproject_log_properties>
+	</config_vars>
+</role>

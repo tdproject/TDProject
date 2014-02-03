@@ -1,0 +1,71 @@
+#!/bin/sh
+
+# first, set the actual directory     
+APP_ROOT_DIR="`pwd`"
+
+# set the configuration file to use
+PEAR_INI="$APP_ROOT_DIR/cfg/.pearrc"
+
+# initial setup
+if test "x$1" = "xsetup"; then
+
+    echo 'Running initial setup...'
+
+    $0 config-set www_dir "$APP_ROOT_DIR"
+    $0 config-set cfg_dir "$APP_ROOT_DIR/cfg"
+    $0 config-set bin_dir "$APP_ROOT_DIR/bin"
+    $0 config-set doc_dir "$APP_ROOT_DIR/docs"
+    $0 config-set ext_dir "$APP_ROOT_DIR/ext"
+    $0 config-set test_dir "$APP_ROOT_DIR/tests"
+    $0 config-set php_dir "$APP_ROOT_DIR/app/code/lib"
+    $0 config-set data_dir "$APP_ROOT_DIR/data"
+    $0 config-set cache_dir "$APP_ROOT_DIR/var/cache"
+    $0 config-set download_dir "$APP_ROOT_DIR/var/download"
+    $0 config-set temp_dir "$APP_ROOT_DIR/var/temp"
+
+    $0 config-set preferred_state beta
+    $0 config-set cache_ttl 60
+    $0 config-set auto_discover 1
+
+    $0 channel-discover connect.techdivision.com
+
+    exit
+fi
+
+# check that mage pear was initialized
+if  test "x$1" != "xconfig-set" &&
+    test "x$1" != "xconfig-get" &&
+    test "x$1" != "xconfig-show" &&
+    test "x$1" != "xchannel-discover" &&
+    test "x`$0 config-get www_dir`" = "x"; then
+        echo 'Please initialize TDProject PEAR installer by running:'
+        echo "$0 setup"
+        exit;
+fi
+
+# first find which PHP binary to use
+if test "x$PHP_PEAR_PHP_BIN" != "x"; then
+    PHP="$PHP_PEAR_PHP_BIN"
+else
+    if test "/usr/bin/php" = '@'php_bin'@'; then
+        PHP=php 
+    else
+        PHP="/usr/bin/php"
+    fi
+fi
+
+# then look for the right pear include dir
+if test "x$PHP_PEAR_INSTALL_DIR" != "x"; then
+    INCDIR=$PHP_PEAR_INSTALL_DIR
+    INCARG="-d include_path=$PHP_PEAR_INSTALL_DIR"
+else
+    if test "$APP_ROOT_DIR/app/code/lib" = '@'php_dir'@'; then
+        INCDIR=`dirname $0`
+        INCARG=""  
+    else
+        INCDIR="$APP_ROOT_DIR/app/code/lib"
+        INCARG="-d include_path=$APP_ROOT_DIR/app/code/lib"
+    fi
+fi
+
+exec $PHP -C -q $INCARG -d output_buffering=1 -d variables_order=EGPCS -d open_basedir="" -d safe_mode=0 -d register_argc_argv="On" -d auto_prepend_file="" -d auto_append_file="" $INCDIR/webappcmd.php -c $PEAR_INI "$@"

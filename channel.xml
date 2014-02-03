@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel version="1.0"><name>project.tdintern.de/tdproject</name><summary>PEAR Channel for TDProject</summary><suggestedalias>tdproject</suggestedalias><servers><primary><rest><baseurl type="REST1.0">http://project.tdintern.de/tdproject/</baseurl><baseurl type="REST1.1">http://project.tdintern.de/tdproject/</baseurl></rest></primary></servers></channel>

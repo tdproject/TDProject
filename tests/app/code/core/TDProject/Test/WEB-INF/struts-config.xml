@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * TDProject_Core
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ */
+-->
+<struts-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.techdivision.com/schema/struts-config-2.1.1.xsd">
+    <message-resources key="Navigation" name="Application" path="TDProject/WEB-INF"/>
+    <message-resources name="Application" path="TDProject/Core/WEB-INF"/>
+    <form-beans>
+        <form-bean include="TDProject/Core/Block/Login/Form.php" name="loginForm" type="TDProject_Core_Block_Login_Form"/>
+        <form-bean include="TDProject/Core/Block/User/View.php" name="userForm" type="TDProject_Core_Block_User_View"/>
+        <form-bean include="TDProject/Core/Block/User/Overview.php" name="userOverviewForm" type="TDProject_Core_Block_User_Overview"/>
+        <form-bean include="TDProject/Core/Block/Setting/View.php" name="settingForm" type="TDProject_Core_Block_Setting_View"/>
+    </form-beans>    
+    <global-forwards>
+        <forward name="SystemError" path="www/design/core/templates/system_error.phtml" redirect="false" />
+        <forward name="SystemLogin" path="?namespace=TDProject&amp;module=Core&amp;path=/login" redirect="true" />
+        <forward name="SystemMessages" path="TDProject_Core_Block_Action" redirect="false" />
+        <forward name="Dashboard" path="?namespace=TDProject&amp;module=Core&amp;path=/dashboard" redirect="true" />
+    </global-forwards>
+    <action-mappings>
+        <action path="/login" name="loginForm" type="TDProject_Core_Controller_Login" scope="request" input="" parameter="method" validate="false" include="TDProject/Core/Controller/Login.php" unknown="false">
+            <forward name="Login" path="TDProject_Core_Block_Login" redirect="false"/>
+            <forward name="Dashboard" path="?namespace=TDProject&amp;module=Core&amp;path=/dashboard" redirect="true"/>
+        </action>      
+        <action path="/dashboard" name="" type="TDProject_Core_Controller_Dashboard" scope="request" input="" parameter="method" validate="false" include="TDProject/Core/Controller/Dashboard.php" unknown="true">
+            <forward name="Dashboard" path="TDProject_Core_Block_Dashboard" redirect="false"/>
+        </action>
+        <action path="/user" name="userForm" type="TDProject_Core_Controller_User" scope="request" input="" parameter="method" validate="false" include="TDProject/Core/Controller/User.php" unknown="false">
+            <forward name="UserView" path="TDProject_Core_Block_User_View" redirect="false"/>
+            <forward name="UserOverview" path="TDProject_Core_Block_User_Overview" redirect="false"/>
+        </action>
+        <action path="/setting" name="settingForm" type="TDProject_Core_Controller_Setting" scope="request" input="" parameter="method" validate="false" include="TDProject/Core/Controller/Setting.php" unknown="false">
+            <forward name="SettingView" path="TDProject_Core_Block_Setting_View" redirect="false"/>
+        </action>
+    </action-mappings>
+</struts-config>

@@ -1,0 +1,24 @@
+<role version="1.0">
+	<releasetypes>php</releasetypes>
+	<installable>0</installable>
+	<phpfile/>
+	<honorsbaseinstall/>
+	<executable />
+	<phpextension />
+	<config_vars>
+		<tdproject_dev_debugger>
+			<type>string</type>
+			<default>false</default>
+			<doc>Enable XDebug debugger (append XDEBUG_SESSION_START=true to all URL's)</doc>
+			<prompt>Activate XDebug debugger</prompt>
+			<group>Advanced</group>
+		</tdproject_dev_debugger>
+        <tdproject_dev_profiler>
+            <type>string</type>
+            <default>0</default>
+            <doc>Enable XDebug profiler (append XDEBUG_PROFILE=true to all URL's)</doc>
+            <prompt>Activate XDebug profiler</prompt>
+            <group>Advanced</group>
+        </tdproject_dev_profiler>
+	</config_vars>
+</role>

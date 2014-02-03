@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<datasources>
+	<datasource>
+		<type>master</type>
+		<name>master</name>
+		<driver>mysqli</driver>
+		<host>localhost</host>
+		<port>3306</port>
+		<database>tdproject</database>
+		<user>tdproject</user>
+		<password>tdproject</password>
+		<encoding>utf8</encoding>
+		<autocommit>false</autocommit>
+	</datasource>
+</datasources>

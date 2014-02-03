@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * TDProject
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ */
+-->
+<container>
+    <beans>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Role"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Assertion"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Rule"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Setting"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_User"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_System_User"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Widget"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_Country"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_Salutation"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_Person"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_Company"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_Address"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_Note"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_NoteType"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_CompanyNote"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_PersonNote"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_CompanyAddress"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_PersonAddress"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Entities_AddressType"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_Estimation"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_PersonProject"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_Project"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_ProjectTask"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_ProjectCycle"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_Task"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_TaskType"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_TaskUser"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_Template"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_TemplateTask"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Report_Model_Entities_Report"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_ProjectUser"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Resource"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Statistic_Model_Entities_UserPerformance"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_TaskPerformance"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Entities_ProjectCalculationExport"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Channel_Model_Entities_Channel"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Channel_Model_Entities_Category"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Channel_Model_Entities_ChannelPackage"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Channel_Model_Entities_Maintainer"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Entities_Rewrite"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Report_Model_Entities_ReportField"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Report_Model_Entities_ReportFieldClass"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Channel_Model_Entities_Release"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Report_Model_Entities_ReportRendered"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Core_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_ERP_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Report_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Statistic_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Webservice_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Channel_Model_Services_DomainProcessor"/>
+        <bean xmlns:php="http://php.net/xsl" name="TDProject_Project_Model_Message_Solr"/>
+    </beans>
+</container>
