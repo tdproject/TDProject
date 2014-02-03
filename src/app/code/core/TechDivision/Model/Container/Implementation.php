@@ -774,6 +774,16 @@ class TechDivision_Model_Container_Implementation
 	}
 
     /**
+     * Returns the object factory.
+     *
+     * @return TDProject_Factory_Object The object factory
+     */
+    public function getObjectFactory()
+    {
+        return $this->getApp()->getObjectFactory();
+    }
+
+    /**
      * Creates a unique cache key for the methods with the
      * params passed as array.
      *
