@@ -33,22 +33,22 @@
 			</pearinstaller>
 			<package>
 				<name>TechDivision_VFS</name>
-				<channel>connect.techdivision.com</channel>
+				<channel>pear.appserver.io/library</channel>
 				<min>0.1.3</min>
 			</package>
 			<package>
 				<name>TechDivision_AOP</name>
-				<channel>connect.techdivision.com</channel>
+				<channel>pear.appserver.io/library</channel>
 				<min>0.1.12</min>
 			</package>
 			<package>
 				<name>TDProject_Project</name>
-				<channel>project.tdintern.de/tdproject</channel>
+				<channel>pear.appserver.io/tdproject</channel>
 				<min>0.5.1</min>
 			</package>
 			<package>
 				<name>TechDivision_ApplicationServer</name>
-				<channel>project.tdintern.de/tdproject</channel>
+				<channel>pear.appserver.io/tdproject</channel>
 				<min>0.1.0</min>
 			</package>
 		</required>
