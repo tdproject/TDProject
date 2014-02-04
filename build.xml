@@ -229,6 +229,9 @@
 		<exec executable="${git.bin}" dir="${basedir}">
 			<arg line="commit -a -m '${release.changelog}'" />
 		</exec>
+        <exec executable="${git.bin}" dir="${basedir}">
+			<arg line="push" />
+        </exec>
 		<exec executable="${git.bin}" dir="${basedir}">
 			<arg line="tag -a -m '${release.changelog}' release-${tag.release.version}" />
 		</exec>
