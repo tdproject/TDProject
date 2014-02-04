@@ -21,7 +21,7 @@
 		<api>${api.stability}</api>
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
-	<notes>Add missing getObjectFactory() method to container implementation</notes>
+	<notes>Switching dependencies to pear.appserver.io channels</notes>
 	<dependencies>
 		<required>
 			<php>
@@ -56,6 +56,21 @@
 	<phprelease/>
 	<changelog>
 		<release xmlns="">
+				<version>
+					<release>0.6.42</release>
+					<api>0.6.10</api>
+				</version>
+				<stability>
+					<release>beta</release>
+					<api>beta</api>
+				</stability>
+				<date>2014-02-04</date>
+				<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+				<notes>
+                        Switching dependencies to pear.appserver.io channels
+                    </notes>
+			</release>
+<release xmlns="">
 				<version>
 					<release>0.6.41</release>
 					<api>0.6.10</api>
