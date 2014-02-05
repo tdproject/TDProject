@@ -21,7 +21,7 @@
 		<api>${api.stability}</api>
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
-	<notes>Switching dependencies to pear.appserver.io channels</notes>
+	<notes>Change to new version 1.1 + change PEAR channel for PEAR_Command_Application</notes>
 	<dependencies>
 		<required>
 			<php>
@@ -56,6 +56,21 @@
 	<phprelease/>
 	<changelog>
 		<release xmlns="">
+				<version>
+					<release>0.6.43</release>
+					<api>0.6.10</api>
+				</version>
+				<stability>
+					<release>beta</release>
+					<api>beta</api>
+				</stability>
+				<date>2014-02-05</date>
+				<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+				<notes>
+                        Change to new version 1.1 + change PEAR channel for PEAR_Command_Application
+                    </notes>
+			</release>
+<release xmlns="">
 				<version>
 					<release>0.6.42</release>
 					<api>0.6.10</api>
