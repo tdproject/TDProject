@@ -434,7 +434,7 @@
 	<target name="UPDATE-create" depends="UPDATE-setup">
 		<exec dir="${php-target.dir}/pear" executable="${php-target.dir}/pear/bin/webapp">
 			<arg value="channel-discover" />
-			<arg value="project.tdintern.de/tdproject" />
+			<arg value="pear.appserver.io/tdproject" />
 		</exec>
 		<exec dir="${php-target.dir}/pear" executable="${php-target.dir}/pear/bin/webapp">
 			<arg value="config-set" />
