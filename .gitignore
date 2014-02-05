@@ -1,2 +1,7 @@
 /.project
+/.settings
+/.buildpath
+/doc
+/instance-src
 /target
+/build.properties

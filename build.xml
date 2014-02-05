@@ -409,13 +409,13 @@
 			<arg value="-c" />
 			<arg value="${php-target.dir}/pear/cfg/.pearrc" />
 			<arg value="channel-discover" />
-			<arg value="connect.techdivision.com" />
+			<arg value="pear.appserver.io/library" />
 		</exec>
 		<exec dir="${php-target.dir}" executable="${pear.bin}">
 			<arg value="-c" />
 			<arg value="${php-target.dir}/pear/cfg/.pearrc" />
 			<arg value="install" />
-			<arg value="techdivision/PEAR_Command_Application" />
+			<arg value="library/PEAR_Command_Application" />
 		</exec>
 	</target>
 	<!-- ==================================================================== -->
