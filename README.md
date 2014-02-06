@@ -7,12 +7,12 @@ channel server.
 
 # Installation
 
-Download and extract ```tdproject-latest.tgz``` file from our
+Download and extract ```tdproject-1.1.tar.gz``` file from our
 GitHub releases page. To do this, open your command line and 
 enter:
 
 ```
-$ curl -O http://www.github.com/tdproject/tdproject-latest.tgz
+$ curl -O https://github.com/tdproject/TDProject/releases/download/1.1/tdproject-1.1.tar.gz
 $ tar xvfz tdproject-latest.tgz
 ```
 
@@ -21,14 +21,25 @@ After that initialize the internal PEAR repository with:
 ```
 $ cd tdproject-{VERSION}
 $ chmod +x bin/webapp
-$ chmod +x appserver
 $ bin/webapp setup
 ```
 
 The final step is to create the datase schema, what can be done on 
-commandline only. TDProject will be delivered with an ```install.php``` 
-that allows you to specify your database credentials. The following
-parameters *has* to be specified: 
+commandline only. Prior running the installation script you have to
+create the database itself. There you can open a command line and
+type:
+
+```
+$ mysql -uroot -p{ROOTPASSWORD}
+mysql> create database tdproject;
+mysql> grant all on tdproject.* to "{DB_USER}"@"localhost" identified by "{DB_PASSWORD}";
+mysql> flush privileges;
+mysql> quit;
+```
+
+TDProject will be delivered with an ```install.php``` that allows you 
+to specify your database credentials. The following parameters *has* to 
+be specified: 
 
 * ```method```:		the setup method ```install``` or ```update```
 * ```db_name```:	the database name to use
