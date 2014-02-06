@@ -674,9 +674,9 @@ class TechDivision_Model_Container_Implementation
 		// create the filename to load the datasources from    	
     	$filename = $this->_containerConfiguration
     		->getConfigurationDirectory() . DIRECTORY_SEPARATOR . "ds.xml";
-    	// check if the file is available
-    	if (($data = file_get_contents($filename, true)) === false) {
-    		return;
+    	// try to load the file data
+    	if (($data = @file_get_contents($filename, true)) === false) {
+			return;
     	}
 		// create a new xml element from the datasource
 		$sxe = new SimpleXMLElement($data);
@@ -686,7 +686,7 @@ class TechDivision_Model_Container_Implementation
 			$this->_addDataSource($sxe);
 		}
 		// check that at least a master datasource is defined
-		if($this->_masterManager == null) {
+		if ($this->_masterManager == null) {
 			throw new TechDivision_Model_Exceptions_ContainerConfigurationException(
 				'No master datasource was defined in the ' .
 				' datasource configuration file'
